@@ -87,3 +87,5 @@ credentials
 # Builds
 .dist/
 build/
+linux/app/
+linux/dist/

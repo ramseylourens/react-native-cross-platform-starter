@@ -24,6 +24,10 @@ const config = {
       new RegExp(
         `${path.resolve(__dirname, 'windows').replace(/[/\\]/g, '/')}.*`,
       ),
+      // The Electron shell has its own node_modules and is not part of the JS bundle
+      new RegExp(
+        `${path.resolve(__dirname, 'linux').replace(/[/\\]/g, '/')}/.*`,
+      ),
       // This prevents "npx @react-native-community/cli run-windows" from hitting: EBUSY: resource busy or locked, open msbuild.ProjectImports.zip or other files produced by msbuild
       new RegExp(`${rnwPath}/build/.*`),
       new RegExp(`${rnwPath}/target/.*`),
